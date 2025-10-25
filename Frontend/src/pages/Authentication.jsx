@@ -21,7 +21,7 @@ export async function action({request}){
     email : data.get('email'),
     password : data.get('password')
   };
-  const response = await fetch('https://event-website-25up.onrender.com' + mode , {
+  const response = await fetch('https://event-website-qys3.onrender.com/' + mode , {
     method: 'POST',
     headers : {
       'Content-Type' : 'application/json'

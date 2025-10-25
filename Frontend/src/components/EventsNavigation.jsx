@@ -20,7 +20,7 @@ function EventsNavigation() {
               All Events
             </NavLink>
           </li>}
-          {token && location.pathname === `/events/new` || location.pathname === `/events`  && <li>
+          {token && location.pathname === `/events/new` && location.pathname === `/events`  && <li>
             <NavLink
               to="/events/new"
               className={({ isActive }) =>
