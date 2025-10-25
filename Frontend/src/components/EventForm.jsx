@@ -96,7 +96,7 @@ function EventForm({ method, event }) {
       type="button"
       onClick={cancelHandler}
       disabled={isSubmitting}
-      className="px-6 py-2 bg-gray-600 hover:bg-gray-500 rounded-md font-semibold transition"
+      className="px-6 py-2 bg-gray-600 hover:bg-gray-500 rounded-full font-semibold transition"
     >
       Cancel
     </button>
@@ -125,11 +125,11 @@ export async function action({ request, params }) {
     description: data.get('description'),
   };
 
-  let url = 'https://event-website-25up.onrender.com';
+  let url = 'http://localhost:8080/events';
 
   if (method === 'PATCH') {
     const eventId = params.eventId;
-    url = 'https://event-website-25up.onrender.com' + eventId;
+    url = 'http://localhost:8080/events/' + eventId;
   }
  const token = getAuthToken();
   const response = await fetch(url, {

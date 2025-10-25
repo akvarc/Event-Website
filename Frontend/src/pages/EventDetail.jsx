@@ -33,7 +33,7 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-  const response = await fetch('https://event-website-25up.onrender.com' + id);
+  const response = await fetch('http://localhost:8080/events/' + id);
 
   if (!response.ok) {
     throw new Response(JSON.stringify({ message: 'Could not fetch details for selected event.' })
@@ -49,7 +49,7 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-  const response = await fetch('https://event-website-25up.onrender.com');
+  const response = await fetch('http://localhost:8080/events');
 
   if (!response.ok) {
     // return { isError: true, message: 'Could not fetch events.' };
@@ -80,7 +80,7 @@ export async function loader({ request, params }) {
 export async function action({ params, request }) {
   const eventId = params.eventId;
   const token = getAuthToken();
-  const response = await fetch('https://event-website-25up.onrender.com' + eventId, {
+  const response = await fetch('http://localhost:8080/events/' + eventId, {
     method: request.method,
     headers:{
       'Authorization':'Bearer ' + token
