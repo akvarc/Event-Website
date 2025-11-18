@@ -13,7 +13,7 @@ function MainNavigation() {
       <nav className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
 
         {/* Logo */}
-        <h1 className="text-xl font-bold text-[#ffe600]">EVENTS</h1>
+        <h1 className="text-xl font-bold text-[#ffe600]">EVENT'S HUB</h1>
 
         {/* Hamburger Button */}
         <button 
