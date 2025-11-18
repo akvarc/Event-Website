@@ -1,22 +1,34 @@
-// import { useLoaderData } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import classes from './EventsList.module.css';
-
-function EventsList({events}) {
-  // const events = useLoaderData();
-
+function EventsList({ events }) {
   return (
-    <div className={`${classes.events}`}>
-      <h1>All Events</h1>
-      <ul className={classes.list}>
+    <div className="w-full max-w-7xl mx-auto px-4 py-8">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+        All Events
+      </h1>
+
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event) => (
-          <li key={event.id} className={classes.item}>
+          <li
+            key={event.id}
+            className=" bg-gray-800  rounded-xl  overflow-hidden  shadow-lg hover:scale-105  transition  cursor-pointer "
+          >
             <Link to={`/events/${event.id}`}>
-              <img src={event.image} alt={event.title} />
-              <div className={classes.content}>
-                <h2>{event.title}</h2>
-                <time>{event.date}</time>
+              {/* IMAGE */}
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-48 object-cover"
+              />
+
+              {/* CONTENT */}
+              <div className="p-4">
+                <h2 className="text-lg sm:text-xl font-semibold">
+                  {event.title}
+                </h2>
+                <time className="text-sm text-gray-400">
+                  {event.date}
+                </time>
               </div>
             </Link>
           </li>
