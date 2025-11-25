@@ -23,7 +23,7 @@ function EventForm({ method, event }) {
   return (
     <Form
   method={method}
-  className="max-w-lg mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6 text-amber-50"
+  className="max-w-lg mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6 mt-20 text-amber-50"
 >
   {data && data.errors && (
     <ul className="bg-red-700 bg-opacity-30 p-3 rounded space-y-1 text-red-200">
